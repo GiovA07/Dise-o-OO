@@ -44,6 +44,14 @@ public class primeNumbersTest {
 
 
   @Test
+  public void AlgoritmoRobadoTest() {
+    PrimeNumbersAlgorithm algoritm = new AlgoritmoRobado();
+    List<Integer> primeNumbers = algoritm.searchPrimeNumbers(10);
+    List<Integer> expectedPrimes = Arrays.asList(2, 3, 5, 7);
+    assertEquals(expectedPrimes, primeNumbers);
+  }
+
+  @Test
   public void comparedAlgorithm() {
     PrimeNumbersAlgorithm algoritm = new BasicAlgoritm();
     PrimeNumbersAlgorithm algoritm2 = new EratosthenesAlgorithm();
