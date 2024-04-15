@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="stringcalculator.DelimiterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-24T23:47:50" hostname="GIOVA" time="0.178">
+  <properties/>
+  <testcase name="TestRemoveDelimiter()" classname="stringcalculator.DelimiterTest" time="0.155"/>
+  <testcase name="testSetMultipleDelimiters()" classname="stringcalculator.DelimiterTest" time="0.007"/>
+  <testcase name="testIsMultiDelimiter()" classname="stringcalculator.DelimiterTest" time="0.004"/>
+  <testcase name="TestisDelimiterDefault()" classname="stringcalculator.DelimiterTest" time="0.002"/>
+  <testcase name="TestDetectDelimiter()" classname="stringcalculator.DelimiterTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

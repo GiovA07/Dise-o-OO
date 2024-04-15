@@ -24,8 +24,8 @@ public abstract class Entity {
   public void setWeapon(Weapon weapon) {
     if (weapon.get_TypeWeapon() == this.fighterType)
       this.weapon = weapon;
-
-    //throw new IllegalStateException("The weapon does not belong to the character's type.");
+    else
+      throw new IllegalStateException("The weapon does not belong to the character's type.");
 
   }
 

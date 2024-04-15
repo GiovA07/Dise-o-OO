@@ -1,0 +1,15 @@
+    private static String[] partsDeCadena (String numbers) {
+        return numbers.split("[,\n]");  
+    }
+
+[,\n] Es una expresion regular para dividir la string, teniendo en cuenta tanto las "comas" como los "saltos de línea". Esto permitirá sumar los números correctamente en casos donde se utilicen ambos tipos de delimitadores.
+
+
+
+
+StringCalculator.output
+
+"\\[|\\]"
+
+
+que es un pipe

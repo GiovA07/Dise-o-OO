@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="stringcalculator.StringCalculatorTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2024-03-24T23:47:51" hostname="GIOVA" time="0.049">
+  <properties/>
+  <testcase name="testString2Numbers()" classname="stringcalculator.StringCalculatorTest" time="0.009"/>
+  <testcase name="testIgnoreBigger1000()" classname="stringcalculator.StringCalculatorTest" time="0.001"/>
+  <testcase name="testString1Number()" classname="stringcalculator.StringCalculatorTest" time="0.001"/>
+  <testcase name="testString5Numbers()" classname="stringcalculator.StringCalculatorTest" time="0.001"/>
+  <testcase name="testStringDelimiterCustom()" classname="stringcalculator.StringCalculatorTest" time="0.002"/>
+  <testcase name="testStringNewDelimiter()" classname="stringcalculator.StringCalculatorTest" time="0.002"/>
+  <testcase name="test2Delimiters()" classname="stringcalculator.StringCalculatorTest" time="0.001"/>
+  <testcase name="testMultiDelimiters()" classname="stringcalculator.StringCalculatorTest" time="0.002"/>
+  <testcase name="testStringNumberNegative()" classname="stringcalculator.StringCalculatorTest" time="0.007"/>
+  <testcase name="testDelimiterAnyLong()" classname="stringcalculator.StringCalculatorTest" time="0.002"/>
+  <testcase name="testStringEmpty()" classname="stringcalculator.StringCalculatorTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
