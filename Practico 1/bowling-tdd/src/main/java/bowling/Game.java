@@ -20,6 +20,7 @@ public class Game {
     Frame frame = frames[totalFrames];
     if (numPines <= 10) {
       frame.addRoll(numPines);
+      
       if(numPines == 10 && !extraRoll) {
         frame.addRoll(0);
       }
