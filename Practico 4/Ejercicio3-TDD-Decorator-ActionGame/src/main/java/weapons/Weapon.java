@@ -3,6 +3,7 @@ package weapons;
 import fightertype.FighterType;
 
 public abstract class Weapon {
+  static int maxGems = 3;
   int damage;
   FighterType fighterType;
 
@@ -13,6 +14,10 @@ public abstract class Weapon {
   public FighterType get_TypeWeapon() {
     return this.fighterType;
   }
+
+  public int cantGems() {
+    return 0;
+	}
 
 
 }

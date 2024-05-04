@@ -13,7 +13,7 @@ public class FileLogger implements Observer {
     }
 
     @Override
-    public void updateFight(Entity fighter, Entity fighter2) {
+    public void updateDamage(Entity fighter, Entity fighter2) {
       writeFile("El peleador: " + fighter.getName() + "Daño a " + fighter2.getName());
       writeFile("El daño causado fue: " + fighter.getWeapon().get_damage());
     }

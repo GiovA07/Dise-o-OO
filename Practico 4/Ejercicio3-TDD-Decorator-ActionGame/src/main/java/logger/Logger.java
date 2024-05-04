@@ -10,7 +10,7 @@ public class Logger implements Observer {
   }
 
   @Override
-  public void updateFight(Entity fighter, Entity fighter2) {
+  public void updateDamage(Entity fighter, Entity fighter2) {
     System.out.println("El peleador: " + fighter.getName() + "Daño a " + fighter2.getName());
     System.out.println("El daño causado fue: " + fighter.getWeapon().get_damage());
   }

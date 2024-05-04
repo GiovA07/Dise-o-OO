@@ -32,9 +32,9 @@ public abstract class Subject {
 		}
   }
 
-  public void notifyFightObservers(Entity fighter, Entity fighter2) {
+  public void notifyDamageObservers(Entity fighter, Entity fighter2) {
     for (Observer observer : observers) {
-			observer.updateFight(fighter,fighter2);
+			observer.updateDamage(fighter,fighter2);
 		}
   }
 
