@@ -10,6 +10,19 @@ import decorator.starbuzz.size.*;
 public class starbuzzTest {
   //bebidas
   @Test
+  public void doubleMochaSoyLatteWithWhip(){
+    Beverage beverage = new HouseBlend();
+    beverage.setSize(new LargeSize());
+    beverage = new Soy(beverage);      // Añadir soja
+    beverage = new Mocha(beverage);   // mocha
+    beverage = new Mocha(beverage);  // otro mocha
+    beverage = new Whip(beverage);  //crema batida
+    assertEquals(4.49, beverage.cost());
+    assertEquals("House Blend Coffee, Soy, Mocha, Mocha, Whip", beverage.getDescription());
+  }
+
+  //bebidas
+  @Test
   public void cappuccinoTest() {
     Beverage beverage = new Cappuccino();
     assertEquals(2.49, beverage.cost());
@@ -47,5 +60,17 @@ public class starbuzzTest {
   }
 
 
+  //Factory
+  @Test
+  public void BeverageFactory() {
+    BeverageFactory factory = new BeverageCreator();
+    Beverage beverage = factory.createBeverage("Capuccino", new MediumSize());
+    beverage = factory.createDecoratedBeverage(beverage, "Caramel");
+    beverage = factory.createDecoratedBeverage(beverage, "Mocha");
+    beverage = factory.createDecoratedBeverage(beverage, "Soy");
+
+    assertEquals(2.49 + (.35) + (.25) + (.15), beverage.cost());
+    assertEquals("Cappuccino, Caramel, Mocha, Soy", beverage.getDescription());
+  }
 
 }

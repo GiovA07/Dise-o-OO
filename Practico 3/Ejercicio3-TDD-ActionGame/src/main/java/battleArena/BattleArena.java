@@ -6,6 +6,7 @@ import logger.Subject;
 public class BattleArena extends Subject {
   Entity fighter1;
   Entity fighter2;
+
   public BattleArena(Entity fighter1, Entity fighter2) {
     this.fighter1 = fighter1;
     this.fighter2 = fighter2;
@@ -30,17 +31,10 @@ public class BattleArena extends Subject {
         turn = 1;
       }
     }
-    this.notifyDeadObservers(battleWin(fighter1, fighter2));
+    this.notifyDeadObservers(fighter1, fighter2);
   }
 
-  private boolean terminedBattle(Entity entityOne, Entity entityTwo) {
-    return entityOne.getHealth() == 0 || entityTwo.getHealth() == 0;
-  }
-
-  private String battleWin (Entity entityOne, Entity entityTwo) {
-    if (entityOne.getHealth() == 0)
-      return "Player 2 Gano";
-    else
-      return "Player 1 Gano";
+  private boolean terminedBattle(Entity fighter1, Entity fighter2) {
+    return fighter1.getHealth() == 0 || fighter2.getHealth() == 0;
   }
 }

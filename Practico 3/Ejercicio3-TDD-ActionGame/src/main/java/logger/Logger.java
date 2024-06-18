@@ -5,14 +5,14 @@ import weapons.Weapon;
 
 public class Logger implements Observer {
   @Override
-  public void updateDeath(String msg) {
+  public void updateDeath(Entity fighter, Entity fighter2) {
+    String msg = "";
+    if (fighter.getHealth() == 0) {
+      msg = "Player 1 MURIO. PLAYER 2 GANA!";
+    } else {
+      msg = "Player 2 MURIO. PLAYER 1 GANA!";
+    }
     System.out.println(msg);
-  }
-
-  @Override
-  public void updateFight(Entity fighter, Entity fighter2) {
-    System.out.println("El peleador: " + fighter.getName() + "Daño a " + fighter2.getName());
-    System.out.println("El daño causado fue: " + fighter.getWeapon().get_damage());
   }
 
   @Override
@@ -24,5 +24,11 @@ public class Logger implements Observer {
   @Override
   public void updateWeapon(Weapon weapon) {
     System.out.println("El Tipo de Arma es: " + weapon.get_TypeWeapon());
+  }
+
+  @Override
+  public void updateFight(Entity fighter, Entity fighter2) {
+    System.out.println("El peleador: " + fighter.getName() + "Daño a " + fighter2.getName());
+    System.out.println("El daño causado fue: " + fighter.getWeapon().get_damage());
   }
 }

@@ -4,8 +4,9 @@ import fightertype.FighterType;
 
 public class FistBumps extends Weapon {
   public FistBumps() {
-    this.damage = 50;
+    this.damage = 15;
     this.fighterType = FighterType.MELEE;
+    this.maxGems = 6;
   }
 
 }

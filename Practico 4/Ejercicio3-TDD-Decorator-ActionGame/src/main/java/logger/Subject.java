@@ -38,9 +38,9 @@ public abstract class Subject {
 		}
   }
 
-	public void notifyDeadObservers(String str) {
+	public void notifyDeadObservers(Entity fighter, Entity fighter2) {
     for (Observer observer : observers) {
-			observer.updateDeath(str);
+			observer.updateDeath(fighter,fighter2);
 		}
   }
 

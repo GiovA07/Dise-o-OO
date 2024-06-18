@@ -18,7 +18,7 @@ public class ArgentinaPizzaIngredientFactory implements PizzaIngredientFactory {
 	public Veggies[] createVeggies() {
 		Veggies veggies[] = { new TomatoVeggie(),
 		                      new GreenOlives(),
-		          					 };
+		          			};
 		return veggies;
 	}
 

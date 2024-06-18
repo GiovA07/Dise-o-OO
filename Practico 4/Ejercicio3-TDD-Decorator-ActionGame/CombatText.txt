@@ -10,3 +10,14 @@ El daÃ±o causado fue: 50
 El peleador: KnightDaÃ±o a Wizard
 El daÃ±o causado fue: 50
 Player 1 Gano
+El Peleador es: Knight
+Su tipo es: MELEE
+El Peleador es: Wizard
+Su tipo es: MAGIC
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 50
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 50
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 50
+Player 2 MURIO. PLAYER 1 GANA!

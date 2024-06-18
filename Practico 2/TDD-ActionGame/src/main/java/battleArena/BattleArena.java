@@ -3,8 +3,8 @@ package battleArena;
 import characters.Entity;
 
 public class BattleArena {
-  public void battle(Entity character1, Entity character2) {
-    System.out.println("Batalla de arena entre: " + character1.getName() + " y " + character2.getName() + "!");
+
+  public String battle(Entity character1, Entity character2) {
     int turn = 1;
     while(!terminedBattle(character1, character2)) {
       if (turn == 1) {
@@ -15,7 +15,7 @@ public class BattleArena {
         turn = 1;
       }
     }
-    System.err.println(battleWin(character1, character2));
+    return battleWin(character1, character2);
   }
 
   private boolean terminedBattle(Entity entityOne, Entity entityTwo) {

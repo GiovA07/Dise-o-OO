@@ -12,6 +12,6 @@ public class Knight extends Entity {
 
   @Override
   public void display() {
-    System.err.println("Soy un caballero");
+    System.err.println("i am knight");
   }
 }

@@ -2,39 +2,59 @@ package simulator;
 
 import org.junit.jupiter.api.Test;
 
-import simulator.fly.FlyNoWay;
+import simulator.fly.*;
+import simulator.quack.*;
 
 import static org.mockito.Mockito.*;
 
 public class DuckTest {
 
-//     @Test
-//     public void flyTest() {
-//         // Mock System.out
-//         System.setOut(mock(java.io.PrintStream.class));
-
-//         FlyNoWay flyNoWay = new FlyNoWay();
-//         flyNoWay.fly();
-
-//         // Verificar que se haya llamado System.out.println con el mensaje esperado
-//         verify(System.out).println("I can't fly");
-//     }
-
     @Test
-    public void quackTest() {
-        Duck duck = new ModelDuck();
-        duck.flyBehavior.fly();;
-        duck.quackBehavior.quack();
+    public void performTest() {
+        Duck rubberDuck = mock(RubberDuck.class);
+        rubberDuck.performFly();
+        rubberDuck.performQuack();
+
+        verify(rubberDuck).performFly();
+        verify(rubberDuck).performQuack();
     }
 
     @Test
-    public void duckMallardTest() {
-        Duck duck = new MallardDuck();
-        duck.flyBehavior.fly();
-        duck.quackBehavior.quack();
+    public void modifyQuackAndFlyTest() {
+        Duck rubberDuck = new RubberDuck();
+
+        QuackBehavior newQuack = mock(NotQuack.class);
+        FlyBehavior newFly = mock(FlyRocketPowered.class);
+
+        rubberDuck.setQuackBehavior(newQuack);
+        rubberDuck.setFlyBehavior(newFly);
+
+        rubberDuck.performQuack();
+        rubberDuck.performFly();
+
+        verify(newQuack).quack();
+        verify(newFly).fly();
+
     }
 
 
+    @Test
+    public void modifyQuackAndFlyTest2() {
+        Duck duck = new WoodenDuck();
+
+        QuackBehavior newQuack = mock(Squeak.class);
+        FlyBehavior newFly = mock(FlyWithWings.class);
+
+        duck.setQuackBehavior(newQuack);
+        duck.setFlyBehavior(newFly);
+
+        duck.performQuack();
+        duck.performFly();
+
+        verify(newQuack).quack();
+        verify(newFly).fly();
+
+    }
 
 }
 

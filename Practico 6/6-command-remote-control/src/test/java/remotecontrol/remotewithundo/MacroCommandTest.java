@@ -16,8 +16,8 @@ public class MacroCommandTest {
     private Command airConditionerOff;
     private Command ceilingHigh;
     private Command ceilingOff;
-    private Command[] partyOnCommands;
-    private Command[] partyOffCommands;
+    private Command[] onCommands;
+    private Command[] offCommands;
 
     @BeforeEach
     public void setUp() {
@@ -30,8 +30,8 @@ public class MacroCommandTest {
         ceilingHigh = new CeilingFanHighCommand(ceiling);
         ceilingOff = new CeilingFanOffCommand(ceiling);
 
-        partyOnCommands = new Command[] { airConditionerOn, ceilingHigh };
-        partyOffCommands = new Command[] { airConditionerOff, ceilingOff };
+        onCommands = new Command[] { airConditionerOn, ceilingHigh };
+        offCommands = new Command[] { airConditionerOff, ceilingOff };
     }
 
   @Test
@@ -60,8 +60,8 @@ public class MacroCommandTest {
     // Command dimmerLightCommand = mock(DimmerLightOnCommand.class);
 
     // Command[] commands = { airCommand, lightCommand, dimmerLightCommand };
-    Command partyOn = new MacroCommand(partyOnCommands);
-    Command partyOff = new MacroCommand(partyOffCommands);
+    Command partyOn = new MacroCommand(onCommands);
+    Command partyOff = new MacroCommand(offCommands);
 
     remoteControl.setCommand(0, partyOn, partyOff);
 
@@ -76,8 +76,8 @@ public class MacroCommandTest {
 
   @Test
   public void testMacroCommandExecuteRemoteControlUndo() {
-    Command partyOn = new MacroCommand(partyOnCommands);
-    Command partyOff = new MacroCommand(partyOffCommands);
+    Command partyOn = new MacroCommand(onCommands);
+    Command partyOff = new MacroCommand(offCommands);
 
     remoteControl.setCommand(0, partyOn, partyOff);
 

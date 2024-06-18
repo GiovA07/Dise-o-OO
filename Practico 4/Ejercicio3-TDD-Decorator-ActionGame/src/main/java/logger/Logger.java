@@ -5,9 +5,16 @@ import weapons.Weapon;
 
 public class Logger implements Observer {
   @Override
-  public void updateDeath(String msg) {
+  public void updateDeath(Entity fighter, Entity fighter2) {
+    String msg = "";
+    if (fighter.getHealth() == 0) {
+      msg = "Player 1 MURIO. PLAYER 2 GANA!";
+    } else {
+      msg = "Player 2 MURIO. PLAYER 1 GANA!";
+    }
     System.out.println(msg);
   }
+
 
   @Override
   public void updateDamage(Entity fighter, Entity fighter2) {

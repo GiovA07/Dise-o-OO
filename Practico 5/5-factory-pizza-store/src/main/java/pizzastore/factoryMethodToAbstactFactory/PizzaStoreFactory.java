@@ -4,7 +4,7 @@ public abstract class PizzaStoreFactory {
 
 	abstract Pizza createPizzaCheese();
 	abstract Pizza createPizzaVeggie();
-	abstract Pizza createPizzaPeperoni();
+	abstract Pizza createPizzaClam();
 
 	protected Pizza createOrder(Pizza pizza) {
 		System.out.println("--- Making a " + pizza.getName() + " ---");

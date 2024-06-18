@@ -28,6 +28,8 @@ public class DependentPizzaStore {
 		} else if (style.equals("ARG")) {
 			if (type.equals("cheese")) {
 				pizza = new ARGStyleCheesePizza();
+			} else if (type.equals("clam")) {
+				return new ARGStyleClamPizza();
 			} else if (type.equals("veggie")) {
 				pizza = new ARGStyleVeggiePizza();
 			}

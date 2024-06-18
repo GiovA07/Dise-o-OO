@@ -7,6 +7,6 @@ public interface Observer {
 	public void updateDamage(Entity fighter, Entity fighter2); 		//Actualizacion Pelea y daño que causo
 	public void updateFighter(Entity fighter);	//Actualizacion Peleador
 	public void updateWeapon(Weapon weapon);		//Actualizacion arma
-	public void updateDeath (String msg);				//Actualizacion Muerte
+	public void updateDeath (Entity fighter, Entity fighter2);				//Actualizacion Muerte
 
 }

@@ -10,7 +10,7 @@ public class BasicAlgoritm implements PrimeNumbersAlgorithm {
       List<Integer> listPrime = new ArrayList<>();
 
       for (int i = 2; i < n; i++) {
-        if(!isPrime(i)) {
+        if(isPrime(i)) {
           listPrime.add(i);
         }
       }
@@ -18,11 +18,11 @@ public class BasicAlgoritm implements PrimeNumbersAlgorithm {
     }
 
     private boolean isPrime(int n) {
-      boolean isPrime = false;
+      boolean isPrime = true;
       int i = 2;
-      while (!isPrime && i < n) {
+      while (isPrime && i < n) {
         if (n % i == 0) {
-          isPrime = true;
+          isPrime = false;
         }
         i++;
       }

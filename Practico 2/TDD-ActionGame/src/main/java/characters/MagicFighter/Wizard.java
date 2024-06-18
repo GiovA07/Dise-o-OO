@@ -14,7 +14,7 @@ public class Wizard extends Entity{
 
   @Override
   protected void display() {
-    System.err.println("Soy un Mago");
+    System.err.println("i am wizard");
 
   }
 }

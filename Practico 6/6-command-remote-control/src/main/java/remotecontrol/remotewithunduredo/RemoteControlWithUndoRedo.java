@@ -13,15 +13,15 @@ public class RemoteControlWithUndoRedo {
     public RemoteControlWithUndoRedo(int k) {
       onCommands = new Command[7];
       offCommands = new Command[7];
+      undoStack = new Stack<>();
+      redoStack = new Stack<>();
+      this.maxSize = k;
+
       Command noCommand = new NoCommand();
       for(int i=0;i<7;i++) {
         onCommands[i] = noCommand;
         offCommands[i] = noCommand;
       }
-
-      undoStack = new Stack<>();
-      redoStack = new Stack<>();
-      this.maxSize = k;
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {

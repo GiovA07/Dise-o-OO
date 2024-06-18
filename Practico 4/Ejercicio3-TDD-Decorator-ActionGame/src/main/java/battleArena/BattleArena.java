@@ -40,17 +40,10 @@ public class BattleArena extends Subject {
         turn = 1;
       }
     }
-    this.notifyDeadObservers(battleWin(fighter1, fighter2));
+    this.notifyDeadObservers(fighter1, fighter2);
   }
 
   private boolean terminedBattle(Entity entityOne, Entity entityTwo) {
     return !entityOne.isAlive() || !entityTwo.isAlive();
-  }
-
-  private String battleWin (Entity entityOne, Entity entityTwo) {
-    if (entityOne.getHealth() == 0)
-      return "Player 2 Gano";
-    else
-      return "Player 1 Gano";
   }
 }

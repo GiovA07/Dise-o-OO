@@ -5,8 +5,7 @@ import pizzastore.abstractfactory.*;
 public class ArgentinaPizzaStore extends PizzaStore {
 	public Pizza createPizza(String item) {
 		Pizza pizza = null;
-		PizzaIngredientFactory ingredientFactory =
-		new ArgentinaPizzaIngredientFactory();
+		PizzaIngredientFactory ingredientFactory = new ArgentinaPizzaIngredientFactory();
 
 		if (item.equals("cheese")) {
 

@@ -16,10 +16,13 @@ public class BattleTest {
 
     @Test
     public void battleTest() {
-        Entity entity = new Knight();
-        Entity entity2 = new Wizard();
+        Entity character1 = new Knight();
+        Entity character2 = new Wizard();
         BattleArena arena = new BattleArena();
-        arena.battle(entity, entity2);
+        String win = arena.battle(character1, character2);
+        assertEquals("Player 1", win);
+        assertTrue(character1.getHealth() > 0);
+        assertTrue(character2.getHealth() == 0);
     }
 
     @Test
@@ -28,7 +31,11 @@ public class BattleTest {
         Entity character2 = new Wizard();
         character2.setWeapon(new AstralBall());
         BattleArena arena = new BattleArena();
-        arena.battle(character1, character2);
+        String win = arena.battle(character1, character2);
+        assertEquals("Player 2", win);
+        assertTrue(character1.getHealth() == 0);
+        assertTrue(character2.getHealth() > 0);
+
     }
 
 }

@@ -15,7 +15,7 @@ public class Archer extends Entity {
 
   @Override
   protected void display() {
-    // TODO Auto-generated method stub
+    System.err.println("I am archer");
 
   }
 }

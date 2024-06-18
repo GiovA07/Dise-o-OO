@@ -17,16 +17,15 @@ public abstract class Entity {
     return health;
   }
 
-  public Weapon getWeapon() {
-    return weapon;
-  }
-
   public void setWeapon(Weapon weapon) {
     if (weapon.get_TypeWeapon() == this.fighterType)
       this.weapon = weapon;
     else
       throw new IllegalStateException("The weapon does not belong to the character's type.");
+  }
 
+  public Weapon getWeapon() {
+    return weapon;
   }
 
   public FighterType get_FighterType() {
@@ -37,16 +36,15 @@ public abstract class Entity {
     return name;
   }
 
+  public void attack(Entity target) {
+    target.takeDamage(weapon.get_damage());
+  }
+
   public void takeDamage(int damage) {
     health -= damage;
     if (health < 0) {
         health = 0;
     }
-    //throw new IllegalStateException("the character is weakened");
-  }
-
-  public void attack(Entity target) {
-    target.takeDamage(weapon.get_damage());
   }
 
   protected abstract void display();

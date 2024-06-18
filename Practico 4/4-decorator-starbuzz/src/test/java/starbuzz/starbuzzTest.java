@@ -8,6 +8,19 @@ import decorator.starbuzz.*;
 import decorator.starbuzz.size.*;
 
 public class starbuzzTest {
+
+  @Test
+  public void doubleMochaSoyLatteWithWhip(){
+    Beverage beverage = new HouseBlend();
+    beverage.setSize(new LargeSize());
+    beverage = new Soy(beverage);      // Añadir soja
+    beverage = new Mocha(beverage);   // mocha
+    beverage = new Mocha(beverage);  // otro mocha
+    beverage = new Whip(beverage);  //crema batida
+    assertEquals(4.49, beverage.cost());
+    assertEquals("House Blend Coffee, Soy, Mocha, Mocha, Whip", beverage.getDescription());
+  }
+
   //bebidas
   @Test
   public void cappuccinoTest() {

@@ -4,20 +4,18 @@ public class ARGPizzaStore extends PizzaStoreFactory {
 
 	@Override
 	public Pizza createPizzaCheese() {
-		Pizza pizza = createOrder(new ARGStyleCheesePizza());
-		return pizza;
-	}
+		return new ARGStyleCheesePizza();
 
-	@Override
-	public Pizza createPizzaPeperoni() {
-	// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
 	public Pizza createPizzaVeggie() {
-		Pizza pizza = createOrder(new ARGStyleVeggiePizza());
-		return pizza;
+		 return new ARGStyleVeggiePizza();
+	}
+
+	@Override
+	Pizza createPizzaClam() {
+		return new ARGStyleClamPizza();
 	}
 
 }

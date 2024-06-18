@@ -11,7 +11,7 @@ public class ForecastDisplay implements Observer, DisplayElement {
 	}
 
 	public void update(Subject subject) {
-    this.lastPressure = currentPressure;
+    	this.lastPressure = currentPressure;
 
 		this.currentPressure = weatherData.getPressure();
 

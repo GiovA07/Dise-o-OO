@@ -35,6 +35,7 @@ public class Main {
                     commandManager.redo();
                     break;
                 default:
+                    scanner.close();
                     return;
             }
         }

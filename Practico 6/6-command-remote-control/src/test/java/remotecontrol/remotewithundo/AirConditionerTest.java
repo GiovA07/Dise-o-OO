@@ -18,7 +18,7 @@ public class AirConditionerTest {
     public void testUndoAirConditionerOn() {
       AirConditionerOnCommand onCommand = new AirConditionerOnCommand(airConditioner);
       onCommand.undo();
-      // se verifica que el método on() del objeto simulado airConditioner se haya llamado exactamente una vez durante la ejecución del método undo().
+      // se verifica que el metodo on() del objeto simulado airConditioner se haya llamado exactamente una vez durante la ejecucion del metodo undo().
       verify(airConditioner).off();
     }
 

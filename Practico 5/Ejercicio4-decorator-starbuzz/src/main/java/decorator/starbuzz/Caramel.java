@@ -4,7 +4,6 @@ public class Caramel extends CondimentDecorator {
   public Caramel(Beverage beverage) {
       this.beverage = beverage;
       setSize(beverage.getSize());
-
   }
 
   public String getDescription() {

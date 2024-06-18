@@ -39,17 +39,30 @@ public class weaponTest {
     Weapon weapon = new Sword();
     weapon = new RubyGem(weapon);
     assertEquals(70+5, weapon.get_damage());
+    assertEquals(4, weapon.get_maxGems());
+    assertEquals(1, weapon.cantGems());
 
   }
 
   @Test
-  public void maxGemsWeponTest() {
+  public void SaphireGemFirstBumpsTest() {
+    Weapon weapon = new FistBumps();
+    weapon = new SaphireGem(weapon);
+    assertEquals(15+7, weapon.get_damage());
+    assertEquals(6, weapon.get_maxGems());
+    assertEquals(1, weapon.cantGems());
+  }
+
+  @Test
+  public void maxGemsWeponSwordTest() {
     Weapon weapon = new Sword();
     weapon = new RubyGem(weapon);
     weapon = new RubyGem(weapon);
     weapon = new RubyGem(weapon);
-    assertEquals(70+15, weapon.get_damage());
-
+    weapon = new RubyGem(weapon);
+    assertEquals(70+20, weapon.get_damage());
+    assertEquals(4, weapon.get_maxGems());
+    assertEquals(4, weapon.cantGems());
 
     final Weapon finalWeapon = weapon; // Declarar la variable final
     IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -57,7 +70,45 @@ public class weaponTest {
     });
 
     assertEquals("Maximum number of gems exceeded", exception.getMessage());
+  }
 
+  @Test
+  public void maxGemsFistBumpsTest() {
+    Weapon weapon = new FistBumps();
+    weapon = new RubyGem(weapon);
+    weapon = new RubyGem(weapon);
+    weapon = new RubyGem(weapon);
+    weapon = new SaphireGem(weapon);
+    weapon = new SaphireGem(weapon);
+    weapon = new SaphireGem(weapon);
 
+    assertEquals(15+15+7+7+7, weapon.get_damage());
+    assertEquals(6, weapon.get_maxGems());
+    assertEquals(6, weapon.cantGems());
+
+    final Weapon finalWeapon = weapon; // Declarar la variable final
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+        new RubyGem(finalWeapon);
+    });
+
+    assertEquals("Maximum number of gems exceeded", exception.getMessage());
+  }
+
+  @Test
+  public void maxGemsWeponFireBallTest() {
+    Weapon weapon = new FireBall();
+    weapon = new SaphireGem(weapon);
+    weapon = new RubyGem(weapon);
+    weapon = new SaphireGem(weapon);
+    assertEquals(50+7+5+7, weapon.get_damage());
+    assertEquals(3, weapon.get_maxGems());
+    assertEquals(3, weapon.cantGems());
+
+    final Weapon finalWeapon = weapon; // Declarar la variable final
+    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+        new RubyGem(finalWeapon);
+    });
+
+    assertEquals("Maximum number of gems exceeded", exception.getMessage());
   }
 }

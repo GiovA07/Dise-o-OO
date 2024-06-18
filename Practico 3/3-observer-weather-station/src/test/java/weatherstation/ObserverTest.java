@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class ObserverTest {
   @Test
   void TestOfObserver(){
-    // Crear instancias de los displays
+    //mock de los displays
 		CelciusDisplay celcius = createMock(CelciusDisplay.class);
     CurrentConditionsDisplay currentCondicion = createMock(CurrentConditionsDisplay.class);
     StatisticsDisplay statics = createMock(StatisticsDisplay.class);
@@ -23,6 +23,8 @@ public class ObserverTest {
 
 
      weatherData.removeObserver(currentCondicion);
+     weatherData.removeObserver(statics);
+
      ForecastDisplay forecast = createMock(ForecastDisplay.class);
      weatherData.registerObserver(forecast);
 

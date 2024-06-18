@@ -1,6 +1,7 @@
 package simulator;
 
-import simulator.fly.FlyRocketPowered;
+import simulator.fly.*;
+import simulator.quack.*;
 
 public class DuckSimulator {
 
@@ -13,6 +14,17 @@ public class DuckSimulator {
 		model.performFly();
 		model.setFlyBehavior(new FlyRocketPowered());
 		model.performFly();
+
+		//cambiando fly y quack
+		System.out.println("Duck Rubber: ");
+		Duck duckRubber = new ModelDuck();
+		duckRubber.performFly();
+		duckRubber.performQuack();
+		duckRubber.setFlyBehavior(new FlyRocketPowered());
+		duckRubber.setQuackBehavior(new NotQuack());
+		duckRubber.performFly();
+		duckRubber.performQuack();
+
 	}
 
 }

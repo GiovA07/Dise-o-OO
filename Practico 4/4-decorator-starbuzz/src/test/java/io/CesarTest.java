@@ -14,7 +14,7 @@ public class CesarTest {
   @Test
   public void cypherTextTest() throws IOException{
     int c;
-		InputStream in = null;
+	InputStream in = null;
 
     StringBuilder str = new StringBuilder();
 
