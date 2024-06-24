@@ -1,47 +1,56 @@
 package remotecontrol.remote;
 
 public class RemoteLoader {
- 
+
 	public static void main(String[] args) {
 		RemoteControl remoteControl = new RemoteControl();
- 
+
 		Light livingRoomLight = new Light("Living Room");
 		Light kitchenLight = new Light("Kitchen");
 		CeilingFan ceilingFan= new CeilingFan("Living Room");
 		GarageDoor garageDoor = new GarageDoor("Garage");
 		Stereo stereo = new Stereo("Living Room");
-  
-		LightOnCommand livingRoomLightOn = 
+
+		LightOnCommand livingRoomLightOn =
 				new LightOnCommand(livingRoomLight);
-		LightOffCommand livingRoomLightOff = 
+		LightOffCommand livingRoomLightOff =
 				new LightOffCommand(livingRoomLight);
-		LightOnCommand kitchenLightOn = 
+		LightOnCommand kitchenLightOn =
 				new LightOnCommand(kitchenLight);
-		LightOffCommand kitchenLightOff = 
+		LightOffCommand kitchenLightOff =
 				new LightOffCommand(kitchenLight);
-  
-		CeilingFanOnCommand ceilingFanOn = 
+
+		CeilingFanOnCommand ceilingFanOn =
 				new CeilingFanOnCommand(ceilingFan);
-		CeilingFanOffCommand ceilingFanOff = 
+		CeilingFanOffCommand ceilingFanOff =
 				new CeilingFanOffCommand(ceilingFan);
- 
+
 		GarageDoorUpCommand garageDoorUp =
 				new GarageDoorUpCommand(garageDoor);
 		GarageDoorDownCommand garageDoorDown =
 				new GarageDoorDownCommand(garageDoor);
- 
+
 		StereoOnWithCDCommand stereoOnWithCD =
 				new StereoOnWithCDCommand(stereo);
 		StereoOffCommand  stereoOff =
 				new StereoOffCommand(stereo);
- 
+
 		remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
 		remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
 		remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
 		remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
-  
+		remoteControl.setCommand(4, garageDoorDown, garageDoorUp);
+
+
 		System.out.println(remoteControl);
- 
+
+
+		AirConditioner airConditioner = new AirConditioner("Living Room");
+		Command airOn = new AirConditionerOnCommand(airConditioner);
+		Command airOff = new AirConditionerOffCommand(airConditioner);
+		remoteControl.setCommand(4, airOn, airOff);
+
+
 		remoteControl.onButtonWasPushed(0);
 		remoteControl.offButtonWasPushed(0);
 		remoteControl.onButtonWasPushed(1);

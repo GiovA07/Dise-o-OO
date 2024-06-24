@@ -1,6 +1,12 @@
 package remotecontrol.remote;
 
 public class AirConditioner {
+  String location;
+
+  public AirConditioner(String location) {
+		this.location = location;
+	}
+
   public void on() {
       System.out.println("Air conditioner is ON");
   }

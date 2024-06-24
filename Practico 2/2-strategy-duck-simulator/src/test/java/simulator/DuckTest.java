@@ -5,7 +5,11 @@ import org.junit.jupiter.api.Test;
 import simulator.fly.*;
 import simulator.quack.*;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DuckTest {
 
@@ -17,6 +21,15 @@ public class DuckTest {
 
         verify(rubberDuck).performFly();
         verify(rubberDuck).performQuack();
+    }
+
+    @Test
+    public void performTest2() {
+
+        Duck rubberDuck = new RubberDuck();
+        assertTrue(rubberDuck.flyBehavior instanceof FlyNoWay);
+        assertTrue(rubberDuck.quackBehavior instanceof Squeak);
+
     }
 
     @Test

@@ -23,10 +23,10 @@ public class MacroCommandTest {
     public void setUp() {
         remoteControl = new RemoteControlWithUndo();
         airConditioner = mock(AirConditioner.class);
-        ceiling = mock(CeilingFan.class);
         airConditionerOn = new AirConditionerOnCommand(airConditioner);
         airConditionerOff = new AirConditionerOffCommand(airConditioner);
 
+        ceiling = mock(CeilingFan.class);
         ceilingHigh = new CeilingFanHighCommand(ceiling);
         ceilingOff = new CeilingFanOffCommand(ceiling);
 
@@ -55,15 +55,10 @@ public class MacroCommandTest {
 
   @Test
   public void testMacroCommandExecuteRemoteControl() {
-    // Command airCommand = mock(AirConditionerOnCommand.class);
-    // Command lightCommand = mock(LightOnCommand.class);
-    // Command dimmerLightCommand = mock(DimmerLightOnCommand.class);
+    Command macroOnCommands = new MacroCommand(onCommands);
+    Command macroOffCommands = new MacroCommand(offCommands);
 
-    // Command[] commands = { airCommand, lightCommand, dimmerLightCommand };
-    Command partyOn = new MacroCommand(onCommands);
-    Command partyOff = new MacroCommand(offCommands);
-
-    remoteControl.setCommand(0, partyOn, partyOff);
+    remoteControl.setCommand(0, macroOnCommands, macroOffCommands);
 
     remoteControl.onButtonWasPushed(0);
     verify(airConditioner).on();
@@ -76,10 +71,10 @@ public class MacroCommandTest {
 
   @Test
   public void testMacroCommandExecuteRemoteControlUndo() {
-    Command partyOn = new MacroCommand(onCommands);
-    Command partyOff = new MacroCommand(offCommands);
+    Command macroOnCommands = new MacroCommand(onCommands);
+    Command macroOffCommands = new MacroCommand(offCommands);
 
-    remoteControl.setCommand(0, partyOn, partyOff);
+    remoteControl.setCommand(0, macroOnCommands, macroOffCommands);
 
     remoteControl.onButtonWasPushed(0);
     verify(airConditioner).on();
