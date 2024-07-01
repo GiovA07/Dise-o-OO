@@ -15,4 +15,8 @@ public class RubyGem extends Gems{
     return 5 + weapon.get_damage();
   }
 
+  public String getName() {
+    return weapon.getName();
+  }
+
 }

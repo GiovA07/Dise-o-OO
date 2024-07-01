@@ -15,9 +15,8 @@ public class outputTest {
       PrimeNumbersAlgorithm algoritm = new BasicAlgoritm();
       List<Integer> primeNumbers = algoritm.searchPrimeNumbers(10);
       MockOutput mockOutput = new MockOutput();
-      OutputPrinter printer = new OutputPrinter(mockOutput);
 
-      printer.printOutput(primeNumbers);
+      mockOutput.print(primeNumbers);
 
       assertTrue(mockOutput.printIsInvoked());
       assertEquals(primeNumbers, mockOutput.getPrintInput());

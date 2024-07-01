@@ -5,6 +5,7 @@ public abstract class Gems extends Weapon {
 
 	public Gems(Weapon weapon) {
 		this.maxGems = weapon.get_maxGems();
+		this.fighterType = weapon.fighterType;
 
     	if (weapon.cantGems() < maxGems){
     	  this.weapon = weapon;

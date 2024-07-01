@@ -28,7 +28,10 @@ public class RemoteControlWithUnduRedoTest {
         control.onButtonWasPushed(0);
         verify(airConditioner).on();
         control.onButtonWasPushed(1);
+        verify(light).on();
         control.onButtonWasPushed(2);
+        verify(ceilingFan).medium();
+
 
         control.undoButtonWasPushed();
         verify(ceilingFan).off();
@@ -47,4 +50,5 @@ public class RemoteControlWithUnduRedoTest {
         control.redoButtonWasPushed();
         verify(ceilingFan,times(2)).medium();
     }
+
 }

@@ -6,11 +6,13 @@ public class CustomeList <E> {
     private int size;
     private E[] array;
 
+    @SuppressWarnings("unchecked")
     public CustomeList() {
         array = (E[]) new Object[10];
         size = 0;
     }
 
+    @SuppressWarnings("unchecked")
     public void addElement(E elem) {
         if (size == array.length) {
             E[] newArray = (E[]) new Object[array.length+1];

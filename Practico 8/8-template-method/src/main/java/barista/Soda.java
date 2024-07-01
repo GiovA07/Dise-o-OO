@@ -17,8 +17,4 @@ public class Soda extends CaffeineBeverage {
     public String getSpeciality() {
         return speciality;
     }
-
-	public boolean addIt() {
-		return true;
-	}
 }

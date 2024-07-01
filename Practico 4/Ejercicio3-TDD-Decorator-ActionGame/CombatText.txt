@@ -21,3 +21,85 @@ El daÃ±o causado fue: 50
 El peleador: KnightDaÃ±o a Wizard
 El daÃ±o causado fue: 50
 Player 2 MURIO. PLAYER 1 GANA!
+El Peleador es: Knight
+Su tipo es: MELEE
+El Peleador es: Wizard
+Su tipo es: MAGIC
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 15
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 50
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 15
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 50
+Player 1 MURIO. PLAYER 2 GANA!
+El Peleador es: Knight
+Su tipo es: MELEE
+El Peleador es: Wizard
+Su tipo es: MAGIC
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 15
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 50
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 15
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 50
+Player 1 MURIO. PLAYER 2 GANA!
+El Peleador es: Knight
+Su tipo es: MELEE
+El Peleador es: Wizard
+Su tipo es: MAGIC
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 15
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 50
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 15
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 50
+Player 1 MURIO. PLAYER 2 GANA!
+El Peleador es: Knight
+Su tipo es: MELEE
+El Peleador es: Wizard
+Su tipo es: MAGIC
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 10
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 10
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 10
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 10
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 10
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 10
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 10
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 10
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+El peleador: WizardDaÃ±o a Knight
+El daÃ±o causado fue: 10
+El peleador: KnightDaÃ±o a Wizard
+El daÃ±o causado fue: 10
+Player 2 MURIO. PLAYER 1 GANA!

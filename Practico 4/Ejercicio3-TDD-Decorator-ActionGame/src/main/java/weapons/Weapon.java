@@ -23,5 +23,7 @@ public abstract class Weapon {
     return 0;
 	}
 
+  abstract public String getName();
+
 
 }

@@ -2,6 +2,7 @@ package weatherstation;
 
 import static org.easymock.EasyMock.*;
 import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.*;
 
 public class DisplayTest {
 	// @Test
@@ -22,7 +23,7 @@ public class DisplayTest {
 	// 		weatherData.setMeasurements(80, 25, 30);
 
 	// 		// Verificamos que se haya llamado al método display en el mock de display
-	// 		verify(display).display();
+	// 		verify(display);
 	// }
 	// @Test
 	// public void temperatureInCelcius() {

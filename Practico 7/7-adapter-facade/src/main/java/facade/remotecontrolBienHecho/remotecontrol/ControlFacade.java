@@ -35,6 +35,12 @@ public class ControlFacade {
     }
 
     public void watchSoccerGame() {
+        light.on();
+        tv.on();
+        stereo.on();
+        frezze.on();
+        airConditioner.on();
+
         frezze.two();
         tv.setInputChannel(22);
         stereo.setVolume(50);

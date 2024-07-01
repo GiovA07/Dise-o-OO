@@ -3,10 +3,12 @@ package pizzastore.factoryMethodToAbstactFactory;
 public class Main {
   public static void main(String[] args) {
     PizzaStoreFactory factory = new ARGPizzaStore();
-    Pizza pizza = factory.createPizzaCheese();
-    factory.createOrder(pizza);
+    OrderPizza order = new OrderPizza(factory);
+    order.createOrder("cheese");
 
-    pizza = factory.createPizzaVeggie();
-    factory.createOrder(pizza);
+    PizzaStoreFactory factoryChicago = new ChicagoPizzaStore();
+    OrderPizza orderChicago = new OrderPizza(factoryChicago);
+    orderChicago.createOrder("clam");
+
   }
 }

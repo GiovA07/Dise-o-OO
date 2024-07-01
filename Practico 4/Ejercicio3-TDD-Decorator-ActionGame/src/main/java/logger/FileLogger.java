@@ -7,16 +7,16 @@ import characters.Entity;
 import weapons.Weapon;
 public class FileLogger implements Observer {
 
-  @Override
-  public void updateDeath(Entity fighter, Entity fighter2) {
-    String msg = "";
-    if (fighter.getHealth() == 0) {
-      msg = "Player 1 MURIO. PLAYER 2 GANA!";
-    } else {
-      msg = "Player 2 MURIO. PLAYER 1 GANA!";
+    @Override
+    public void updateDeath(Entity fighter, Entity fighter2) {
+      String msg = "";
+      if (fighter.getHealth() == 0) {
+        msg = "Player 1 MURIO. PLAYER 2 GANA!";
+      } else {
+        msg = "Player 2 MURIO. PLAYER 1 GANA!";
+      }
+      writeFile(msg);
     }
-    writeFile(msg);
-  }
 
     @Override
     public void updateDamage(Entity fighter, Entity fighter2) {

@@ -14,5 +14,7 @@ public abstract class Weapon {
     return this.fighterType;
   }
 
+  abstract public String getName();
+
 
 }

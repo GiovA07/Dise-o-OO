@@ -6,12 +6,16 @@ public abstract class PizzaStoreFactory {
 	abstract Pizza createPizzaVeggie();
 	abstract Pizza createPizzaClam();
 
-	protected Pizza createOrder(Pizza pizza) {
-		System.out.println("--- Making a " + pizza.getName() + " ---");
-		pizza.prepare();
-		pizza.bake();
-		pizza.cut();
-		pizza.box();
-		return pizza;
+
+	public Pizza createTypePizza(String type) {
+		if(type.equals("cheese")) {
+			return createPizzaCheese();
+		} else if (type.equals("veggie")){
+			return createPizzaVeggie();
+		} else if (type.equals("clam")) {
+			return createPizzaClam();
+		} else {
+			throw new IllegalArgumentException();
+		}
 	}
 }

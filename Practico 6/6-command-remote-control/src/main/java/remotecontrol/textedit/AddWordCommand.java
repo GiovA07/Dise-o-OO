@@ -12,6 +12,7 @@ public class AddWordCommand implements Command{
     this.indexLine = indexLine;
     this.indexWord = indexWord;
   }
+
   @Override
   public void execute() {
     buffer.addWord(indexLine, indexWord, word);

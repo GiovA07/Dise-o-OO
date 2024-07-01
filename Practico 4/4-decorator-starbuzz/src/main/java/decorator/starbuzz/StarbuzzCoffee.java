@@ -28,6 +28,7 @@ public class StarbuzzCoffee {
 		System.out.println(beverage3.getDescription()
 				+ " $" + beverage3.cost());
 
+		//"double mocha soy latte with whip
 		Beverage beverage4 = new Decaf();
 		beverage4.setSize(new LargeSize());
 		beverage4 = new Soy(beverage4);

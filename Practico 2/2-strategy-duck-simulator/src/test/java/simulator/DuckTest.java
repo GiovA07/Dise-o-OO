@@ -8,9 +8,6 @@ import simulator.quack.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class DuckTest {
 
     @Test

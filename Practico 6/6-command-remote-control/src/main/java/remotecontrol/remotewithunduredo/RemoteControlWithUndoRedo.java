@@ -53,15 +53,22 @@ public class RemoteControlWithUndoRedo {
       if (!undoStack.isEmpty()) {
           Command command = undoStack.pop();
           command.undo();
-          redoStack.push(command);
+          addCommandToRedoStack(command);
       }
+    }
+
+    private void addCommandToRedoStack(Command command) {
+      if (redoStack.size() == maxSize) {
+          redoStack.remove(0);
+      }
+      redoStack.push(command);
     }
 
     public void redoButtonWasPushed() {
       if (!redoStack.isEmpty()) {
           Command command = redoStack.pop();
           command.execute();
-          undoStack.push(command);
+          addCommandToUndoStack(command);
       }
    }
 

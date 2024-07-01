@@ -12,6 +12,7 @@ public class CustomeListAdapter<E> implements List<E>{
         this.customeList = list;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public boolean add(Object e) {
         customeList.addElement((E) e);
@@ -48,6 +49,7 @@ public class CustomeListAdapter<E> implements List<E>{
         throw new UnsupportedOperationException("Unimplemented method 'contains'");
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     public Iterator iterator() {
         throw new UnsupportedOperationException("Unimplemented method 'iterator'");
@@ -58,6 +60,7 @@ public class CustomeListAdapter<E> implements List<E>{
         throw new UnsupportedOperationException("Unimplemented method 'toArray'");
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public Object[] toArray(Object[] a) {
         throw new UnsupportedOperationException("Unimplemented method 'toArray'");
@@ -68,26 +71,31 @@ public class CustomeListAdapter<E> implements List<E>{
         throw new UnsupportedOperationException("Unimplemented method 'remove'");
     }
 
+    @SuppressWarnings("rawtypes")
     @Override
     public boolean containsAll(Collection c) {
         throw new UnsupportedOperationException("Unimplemented method 'containsAll'");
     }
 
+    @SuppressWarnings("rawtypes")
     @Override
     public boolean addAll(Collection c) {
         throw new UnsupportedOperationException("Unimplemented method 'addAll'");
     }
 
+    @SuppressWarnings("rawtypes")
     @Override
     public boolean addAll(int index, Collection c) {
         throw new UnsupportedOperationException("Unimplemented method 'addAll'");
     }
 
+    @SuppressWarnings("rawtypes")
     @Override
     public boolean removeAll(Collection c) {
         throw new UnsupportedOperationException("Unimplemented method 'removeAll'");
     }
 
+    @SuppressWarnings("rawtypes")
     @Override
     public boolean retainAll(Collection c) {
         throw new UnsupportedOperationException("Unimplemented method 'retainAll'");
@@ -98,6 +106,7 @@ public class CustomeListAdapter<E> implements List<E>{
         throw new UnsupportedOperationException("Unimplemented method 'clear'");
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public Object set(int index, Object element) {
         throw new UnsupportedOperationException("Unimplemented method 'set'");
@@ -118,16 +127,19 @@ public class CustomeListAdapter<E> implements List<E>{
         throw new UnsupportedOperationException("Unimplemented method 'lastIndexOf'");
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public ListIterator listIterator() {
         throw new UnsupportedOperationException("Unimplemented method 'listIterator'");
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public ListIterator listIterator(int index) {
         throw new UnsupportedOperationException("Unimplemented method 'listIterator'");
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     public List subList(int fromIndex, int toIndex) {
         throw new UnsupportedOperationException("Unimplemented method 'subList'");

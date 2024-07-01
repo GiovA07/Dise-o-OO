@@ -23,7 +23,7 @@ public class Main {
                 case 2:
                     System.out.println("Index de la linea que queres borrar:");
                     int removeIndex = scanner.nextInt();
-                    commandManager.executeCommand(new DeleteLine(buffer, removeIndex));
+                    commandManager.executeCommand(new DeleteLineCommand(buffer, removeIndex));
                     break;
                 case 3:
                     commandManager.executeCommand(new PrintCommand(buffer));

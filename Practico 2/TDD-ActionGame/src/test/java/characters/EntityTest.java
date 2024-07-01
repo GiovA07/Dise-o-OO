@@ -27,7 +27,7 @@ public class EntityTest {
         assertEquals(100, entity.getHealth());
         assertTrue(entity.getWeapon() instanceof FistBumps);
         assertTrue(entity.getName() == "Knight");
-        assertEquals(FighterType.MELEE, entity.get_FighterType());
+        assertEquals(FighterType.MELEE, entity.fighterType);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class EntityTest {
         assertEquals(100, entity.getHealth());
         assertTrue(entity.getWeapon() instanceof FireBall);
         assertTrue(entity.getName() == "Wizard");
-        assertEquals(FighterType.MAGIC, entity.get_FighterType());
+        assertEquals(FighterType.MAGIC, entity.fighterType);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class EntityTest {
         assertEquals(100, entity.getHealth());
         assertTrue(entity.getWeapon() instanceof Arch);
         assertTrue(entity.getName() == "Archer");
-        assertEquals(FighterType.RANGED, entity.get_FighterType());
+        assertEquals(FighterType.RANGED, entity.fighterType);
     }
 
     @Test

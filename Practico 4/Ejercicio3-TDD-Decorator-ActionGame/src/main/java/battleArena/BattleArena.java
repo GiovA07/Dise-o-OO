@@ -5,12 +5,6 @@ import logger.Subject;
 import weapons.Weapon;
 
 public class BattleArena extends Subject {
-  Entity fighter1 = null;
-  Entity fighter2;
-  public BattleArena(Entity fighter1, Entity fighter2) {
-    this.fighter1 = fighter1;
-    this.fighter2 = fighter2;
-  }
 
   // public void createCharacter(Entity character, Weapon weapon) {
   //   if (fighter1 == null) {
@@ -25,7 +19,7 @@ public class BattleArena extends Subject {
   // }
 
 
-  public void battle()  {
+  public void battle(Entity fighter1, Entity fighter2)  {
     this.notifyFighterObservers(fighter1);
     this.notifyFighterObservers(fighter2);
     int turn = 1;

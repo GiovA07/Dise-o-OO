@@ -17,8 +17,4 @@ public class LittleJuice extends CaffeineBeverage{
     public String getSpecification(){
         return drinkSpecification;
     }
-
-	public boolean addIt() {
-		return true;
-	}
 }

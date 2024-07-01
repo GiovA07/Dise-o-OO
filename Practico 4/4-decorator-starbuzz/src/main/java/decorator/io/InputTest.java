@@ -3,24 +3,45 @@ package decorator.io;
 import java.io.*;
 
 public class InputTest {
-	public static void main(String[] args) throws IOException {
-		int c;
-		InputStream in = null;
-		try {
-			in = new CesarCipherDecorator(
-					new BufferedInputStream(
-						new FileInputStream("test.txt")));
+		public static void main(String[] args) throws IOException {
+			int c;
+			InputStream in = null;
+			OutputStream out = null;
 
-			while((c = in.read()) >= 0) {
-				System.out.print((char)c);
+			try {
+				// Encriptar el archivo y guardarlo en encrypted.txt
+				in = new LineCont(new CesarCipherDecorator(
+						new BufferedInputStream(
+							new FileInputStream("test.txt"))));
+
+				out = new BufferedOutputStream(new FileOutputStream("encrypted.txt"));
+
+				while((c = in.read()) >= 0) {
+					out.write(c);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				if (in != null) { in.close(); }
+				if (out != null) { out.close(); }
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (in != null) { in.close(); }
+
+			try {
+				// Desencriptar el archivo encrypted.txt y mostrarlo en consola
+				in = new CesarDecryptDecorator(
+						new BufferedInputStream(
+							new FileInputStream("encrypted.txt")));
+
+				while((c = in.read()) >= 0) {
+					System.out.print((char)c);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				if (in != null) { in.close(); }
+			}
 		}
 	}
-}
 
 // public static void main(String[] args) {
 //     BufferedReader in = null;

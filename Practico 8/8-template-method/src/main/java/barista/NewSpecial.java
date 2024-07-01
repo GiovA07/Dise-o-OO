@@ -17,8 +17,4 @@ public class NewSpecial extends CaffeineBeverage{
     public String getParticularity() {
         return particularity;
     }
-
-	public boolean addIt() {
-		return true;
-	}
 }

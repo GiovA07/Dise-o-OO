@@ -11,7 +11,7 @@ public class ForecastDisplay implements Observer, DisplayElement {
 	}
 
 	public void update(float temp, float humidity, float pressure) {
-    lastPressure = currentPressure;
+    	lastPressure = currentPressure;
 		currentPressure = pressure;
 
 		display();

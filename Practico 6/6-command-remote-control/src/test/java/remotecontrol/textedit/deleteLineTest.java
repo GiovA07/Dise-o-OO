@@ -26,7 +26,7 @@ public class deleteLineTest {
 
   @Test
   public void deleteLineCommandExecute() {
-    Command deleteCommand = new DeleteLine(textEditor, 0);
+    Command deleteCommand = new DeleteLineCommand(textEditor, 0);
     deleteCommand.execute();
 
     List<String> lines = textEditor.getLines();
@@ -36,7 +36,7 @@ public class deleteLineTest {
 
   @Test
   public void deleteLineCommandUndo() {
-    Command deleteCommand = new DeleteLine(textEditor, 0);
+    Command deleteCommand = new DeleteLineCommand(textEditor, 0);
     deleteCommand.execute();
     deleteCommand.undo();
 

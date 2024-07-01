@@ -14,4 +14,7 @@ public class SaphireGem extends Gems{
         return 7 + weapon.get_damage();
       }
 
+      public String getName() {
+        return weapon.getName();
+      }
 }
