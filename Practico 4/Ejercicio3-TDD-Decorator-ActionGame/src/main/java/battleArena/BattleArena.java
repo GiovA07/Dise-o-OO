@@ -2,22 +2,8 @@ package battleArena;
 
 import characters.Entity;
 import logger.Subject;
-import weapons.Weapon;
 
 public class BattleArena extends Subject {
-
-  // public void createCharacter(Entity character, Weapon weapon) {
-  //   if (fighter1 == null) {
-  //     character.setWeapon(weapon);
-  //     this.fighter1 = character;
-  //     notifyFighterObservers(fighter1);
-  //   } else if(fighter2 == null){
-  //     character.setWeapon(weapon);
-  //     this.fighter2 = character;
-  //     notifyFighterObservers(fighter2);
-  //   }
-  // }
-
 
   public void battle(Entity fighter1, Entity fighter2)  {
     this.notifyFighterObservers(fighter1);

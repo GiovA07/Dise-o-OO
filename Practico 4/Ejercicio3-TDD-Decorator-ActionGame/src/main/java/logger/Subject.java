@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import characters.Entity;
-import weapons.Weapon;
 
 public abstract class Subject {
 	List<Observer> observers;
@@ -23,12 +22,6 @@ public abstract class Subject {
 	public void notifyFighterObservers(Entity fighter) {
     for (Observer observer : observers) {
 			observer.updateFighter(fighter);
-		}
-  }
-
-	public void notifyWeaponsObservers(Weapon weapon) {
-    for (Observer observer : observers) {
-			observer.updateWeapon(weapon);
 		}
   }
 

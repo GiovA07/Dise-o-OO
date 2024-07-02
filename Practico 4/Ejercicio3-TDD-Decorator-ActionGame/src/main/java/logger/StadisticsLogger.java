@@ -42,8 +42,4 @@ public class StadisticsLogger implements Observer {
         // TODO Auto-generated method stub
     }
 
-    @Override
-    public void updateWeapon(Weapon weapon) {
-        // TODO Auto-generated method stub
-    }
 }

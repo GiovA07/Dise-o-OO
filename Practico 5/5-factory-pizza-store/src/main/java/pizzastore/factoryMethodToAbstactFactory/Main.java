@@ -2,13 +2,13 @@ package pizzastore.factoryMethodToAbstactFactory;
 
 public class Main {
   public static void main(String[] args) {
-    PizzaStoreFactory factory = new ARGPizzaStore();
-    OrderPizza order = new OrderPizza(factory);
-    order.createOrder("cheese");
+    Client client = new Client("Argentina");
 
-    PizzaStoreFactory factoryChicago = new ChicagoPizzaStore();
-    OrderPizza orderChicago = new OrderPizza(factoryChicago);
-    orderChicago.createOrder("clam");
+    client.Order("cheese,clam,cheese,veggie,clam,clam");
+
+
+    client = new Client("Chicago");
+    client.Order("cheese,clam,cheese,veggie,clam,clam");
 
   }
 }

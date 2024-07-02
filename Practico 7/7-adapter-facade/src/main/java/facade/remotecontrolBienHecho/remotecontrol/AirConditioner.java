@@ -3,14 +3,19 @@ package facade.remotecontrolBienHecho.remotecontrol;
 public class AirConditioner {
 
   private String state;
+  private String location;
   private int temperature;
 
+  public AirConditioner(String location) {
+    this.location = location;
+  }
+
   public void on() {
-      state = "Air conditioner is ON";
+    System.out.println("Air conditioner is ON with temperature: " + temperature);
   }
 
   public void off() {
-      state = "Air conditioner is OFF";
+    System.out.println("Air conditioner is OFF");
   }
 
   public void setTemperature(int temp) {
@@ -25,4 +30,3 @@ public class AirConditioner {
     return temperature;
   }
 }
-

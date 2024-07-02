@@ -1,4 +1,4 @@
-package remotecontrol.textedit;
+package remotecontrol.texteditnew;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 public class AddWordTest {
 
-    private TextEditor textEditor;
+    private Text textEditor;
     private String newLine;
 
     @BeforeEach
     public void setUp() {
-        textEditor = new TextEditor();
+        textEditor = new Text();
         newLine = "New Line";
 
         Command command = new AddLineCommand(textEditor, newLine, 0);

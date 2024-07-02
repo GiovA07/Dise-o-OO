@@ -1,9 +1,7 @@
 package pizzastore.factoryMethodToAbstactFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +13,6 @@ public class AbstractTest {
   public void ARGPizzaCheeseTest() {
     Pizza pizza = new ARGStyleCheesePizza();
     assertTrue(pizza instanceof ARGStyleCheesePizza);
-    assertNotNull(pizza);
     assertEquals("Argentina Style Thick Crust Cheese Pizza", pizza.getName());
     assertEquals("Thick Crust Dough", pizza.dough);
     assertEquals("Tomato Sauce", pizza.sauce);
@@ -28,7 +25,6 @@ public class AbstractTest {
   public void ARGPizzaVeggieTest() {
     Pizza pizza = new ARGStyleVeggiePizza();
     assertTrue(pizza instanceof ARGStyleVeggiePizza);
-    assertNotNull(pizza);
     assertEquals("Argentina Style Vegetable Pizza", pizza.getName());
     assertEquals("Thin Crust Dough", pizza.dough);
     assertEquals("Tomato Basil Sauce", pizza.sauce);
@@ -45,7 +41,6 @@ public class AbstractTest {
   public void ARGPizzaClamTest() {
     Pizza pizza = new ARGStyleClamPizza();
     assertTrue(pizza instanceof ARGStyleClamPizza);
-    assertNotNull(pizza);
     assertEquals("Argentina Style Seafood Pizza", pizza.getName());
     assertEquals("Thick Crust Dough", pizza.dough);
     assertEquals("Tomato Sauce", pizza.sauce);
@@ -57,8 +52,8 @@ public class AbstractTest {
 
   @Test
   public void ARGPizzaStoreTest() {
-    PizzaStoreFactory store = new ARGPizzaStore();
-    Pizza pizza = store.createPizzaCheese();
+    FactoryPizza factory = new ARGPizzaStore();
+    Pizza pizza = factory.createTypePizza("cheese");
     assertTrue(pizza instanceof ARGStyleCheesePizza);
     assertEquals("Argentina Style Thick Crust Cheese Pizza", pizza.getName());
     assertEquals("Thick Crust Dough", pizza.dough);
@@ -67,8 +62,8 @@ public class AbstractTest {
 
   @Test
   public void ARGPizzaStoreTest2() {
-    PizzaStoreFactory store = new ARGPizzaStore();
-    Pizza pizza = store.createPizzaClam();
+    FactoryPizza factory = new ARGPizzaStore();
+    Pizza pizza = factory.createTypePizza("clam");
     assertTrue(pizza instanceof ARGStyleClamPizza);
     assertEquals("Argentina Style Seafood Pizza", pizza.getName());
     assertEquals("Thick Crust Dough", pizza.dough);
@@ -77,8 +72,8 @@ public class AbstractTest {
 
   @Test
   public void ARGPizzaStoreTest3() {
-    PizzaStoreFactory store = new ARGPizzaStore();
-    Pizza pizza = store.createPizzaVeggie();
+    FactoryPizza factory = new ARGPizzaStore();
+    Pizza pizza = factory.createTypePizza("veggie");
     assertTrue(pizza instanceof ARGStyleVeggiePizza);
     assertEquals("Argentina Style Vegetable Pizza", pizza.getName());
     assertEquals("Thin Crust Dough", pizza.dough);
@@ -88,12 +83,17 @@ public class AbstractTest {
 
   @Test
   public void testOrderPizza() {
-      PizzaStoreFactory store = new ARGPizzaStore();
-      OrderPizza order = new OrderPizza(store);
+      FactoryPizza factory = new ARGPizzaStore();
+      PizzaStore store = new PizzaStore(factory);
 
-      Pizza pizza = order.createOrder("cheese");
-
-      assertNotNull(pizza);
+      Pizza pizza = store.createOrder("cheese");
       assertEquals("Argentina Style Thick Crust Cheese Pizza", pizza.getName());
+
+      pizza = store.createOrder("clam");
+      assertEquals("Argentina Style Seafood Pizza", pizza.getName());
+
+      pizza = store.createOrder("veggie");
+      assertEquals("Argentina Style Vegetable Pizza", pizza.getName());
   }
+
 }

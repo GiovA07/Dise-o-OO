@@ -8,11 +8,11 @@ public class RemoteControlFacadeTest {
 
     @Test
     public void initializationAndEnding() {
-        TV tv = new TV("Cocina");
-        Frezze frezze = new Frezze("Cocina");
-        Light light = new Light("Cocina");
-        Stereo stereo = new Stereo("Cocina");
-        AirConditioner airConditioner = new AirConditioner();
+        TV tv = new TV("Living");
+        Frezze frezze = new Frezze("Living");
+        Light light = new Light("Living");
+        Stereo stereo = new Stereo("Living");
+        AirConditioner airConditioner = new AirConditioner("Living");
 
         RemoteControl remoteControl = new RemoteControl();
         ControlFacade controlFacade = new ControlFacade(light, tv, stereo, frezze, airConditioner);
@@ -44,7 +44,7 @@ public class RemoteControlFacadeTest {
         Frezze frezze = new Frezze("Sala");
         Light light = new Light("Sala");
         Stereo stereo = new Stereo("Sala");
-        AirConditioner airConditioner = new AirConditioner();
+        AirConditioner airConditioner = new AirConditioner("Sala");
 
         RemoteControl remoteControl = new RemoteControl();
         ControlFacade controlFacade = new ControlFacade(light, tv, stereo, frezze, airConditioner);

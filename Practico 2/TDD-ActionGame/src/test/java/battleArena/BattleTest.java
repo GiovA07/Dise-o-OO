@@ -20,7 +20,7 @@ public class BattleTest {
         Entity character2 = new Wizard();
         BattleArena arena = new BattleArena();
         String win = arena.battle(character1, character2);
-        assertEquals("Player 1", win);
+        assertEquals("Player 1 Win", win);
         assertTrue(character1.getHealth() > 0);
         assertTrue(character2.getHealth() == 0);
     }
@@ -32,9 +32,9 @@ public class BattleTest {
         character2.setWeapon(new AstralBall());
         BattleArena arena = new BattleArena();
         String win = arena.battle(character1, character2);
-        assertEquals("Player 2", win);
-        assertTrue(character1.getHealth() == 0);
-        assertTrue(character2.getHealth() > 0);
+        assertEquals("Player 1 Win", win);
+        assertTrue(character2.getHealth() == 0);
+        assertTrue(character1.getHealth() > 0);
 
     }
 

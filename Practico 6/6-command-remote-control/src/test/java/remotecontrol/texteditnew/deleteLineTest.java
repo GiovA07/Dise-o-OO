@@ -1,4 +1,4 @@
-package remotecontrol.textedit;
+package remotecontrol.texteditnew;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -8,13 +8,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class deleteLineTest {
-    private TextEditor textEditor;
+    private Text textEditor;
     private String newLine;
     private String newLine2;
 
     @BeforeEach
     public void setUp() {
-        textEditor = new TextEditor();
+        textEditor = new Text();
         newLine = "New Line";
         newLine2 = "New Line 2";
 

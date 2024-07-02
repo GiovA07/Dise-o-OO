@@ -1,9 +1,9 @@
 package pizzastore.factoryMethodToAbstactFactory;
 
-public class OrderPizza {
-    public PizzaStoreFactory factory;
+public class PizzaStore {
+    public FactoryPizza factory;
 
-    public OrderPizza(PizzaStoreFactory factory) {
+    public PizzaStore(FactoryPizza factory) {
         this.factory = factory;
     }
 
@@ -16,4 +16,5 @@ public class OrderPizza {
 		pizza.box();
 		return pizza;
 	}
+
 }

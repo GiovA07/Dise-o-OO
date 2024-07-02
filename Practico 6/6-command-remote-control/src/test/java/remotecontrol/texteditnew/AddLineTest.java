@@ -1,4 +1,4 @@
-package remotecontrol.textedit;
+package remotecontrol.texteditnew;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -8,7 +8,7 @@ import java.util.List;
 public class AddLineTest {
   @Test
   public void addLineExecute() {
-    TextEditor textEditor = new TextEditor();
+    Text textEditor = new Text();
     String newLine = "New Line";
     Command command = new AddLineCommand(textEditor, newLine, 0);
     String newLine2 = "New Line 2";
@@ -24,7 +24,7 @@ public class AddLineTest {
 
   @Test
   public void addLineUndo() {
-    TextEditor textEditor = new TextEditor();
+    Text textEditor = new Text();
     String newLine = "New Line";
     Command command = new AddLineCommand(textEditor, newLine, 0);
     command.execute();

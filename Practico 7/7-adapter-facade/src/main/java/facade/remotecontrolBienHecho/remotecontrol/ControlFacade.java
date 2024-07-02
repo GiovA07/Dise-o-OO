@@ -1,71 +1,49 @@
 package facade.remotecontrolBienHecho.remotecontrol;
 
-
 public class ControlFacade {
+    private RemoteControl control = new RemoteControl();
 
-    private Light light;
-    private Stereo stereo;
-    private Frezze frezze;
-    private TV tv;
-    private AirConditioner airConditioner;
+    public ControlFacade (Light light, TV tv,
+                          VideoGame game, AirConditioner airConditioner) {
 
-    public ControlFacade (Light light, TV tv, Stereo stereo,
-                          Frezze frezze, AirConditioner airConditioner) {
-        this.light = light;
-        this.tv = tv;
-        this.stereo = stereo;
-        this.frezze = frezze;
-        this.airConditioner = airConditioner;
-    }
-
-    public void initDivices() {
-        light.on();
-        tv.on();
-        stereo.on();
-        frezze.on();
-        airConditioner.on();
-    }
-
-    public void endDivices() {
-        light.off();
-        tv.off();
-        stereo.off();
-        frezze.off();
-        airConditioner.off();
+        tv.setInputChannel(15);
+        airConditioner.setTemperature(24);
+        control.setCommand(0, new LightOnCommand(light), new LightOffCommand(light));
+        control.setCommand(1, new TVOnCommand(tv), new TVOffCommand(tv));
+        control.setCommand(2, new VideoGameOn(game), new VideoGameOff(game));
+        control.setCommand(3, new AirConditionerOnCommand(airConditioner), new AirConditionerOffCommand(airConditioner));
     }
 
     public void watchSoccerGame() {
-        light.on();
-        tv.on();
-        stereo.on();
-        frezze.on();
-        airConditioner.on();
-
-        frezze.two();
-        tv.setInputChannel(22);
-        stereo.setVolume(50);
-        airConditioner.setTemperature(24);
+        control.onButtonWasPushed(0);
+        control.onButtonWasPushed(1);
+        control.offButtonWasPushed(2);
+        control.onButtonWasPushed(3);
     }
 
     public void finishSoccerGame() {
-        frezze.one();
-        tv.setInputChannel(15);
-        stereo.off();
-        airConditioner.off();
+        control.offButtonWasPushed(0);
+        control.offButtonWasPushed(1);
+        control.offButtonWasPushed(3);
     }
 
     public void setReadingSpace() {
-        tv.off();
-        stereo.off();
-        airConditioner.on();
-        airConditioner.setTemperature(26);
+        control.onButtonWasPushed(0);
+        control.offButtonWasPushed(1);
+        control.offButtonWasPushed(2);
+        control.onButtonWasPushed(3);
     }
 
-    public void normalizeSpace() {
-        tv.on();
-        tv.setInputChannel(33);
-        light.dim(25);
-        stereo.setVolume(30);
-        airConditioner.setTemperature(20);
+    public void setGameMode() {
+        control.onButtonWasPushed(0);
+        control.offButtonWasPushed(1);
+        control.onButtonWasPushed(2);
+        control.onButtonWasPushed(3);
+    }
+
+    public void offGameMode() {
+        control.offButtonWasPushed(1);
+        control.offButtonWasPushed(2);
+        control.offButtonWasPushed(3);
     }
 }

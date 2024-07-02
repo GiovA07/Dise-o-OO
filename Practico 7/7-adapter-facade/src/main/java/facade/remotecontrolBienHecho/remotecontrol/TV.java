@@ -10,20 +10,17 @@ public class TV {
 	}
 
 	public void on() {
-		tvState = "TV is on";
+		System.out.println("TV is on");
 	}
 
 	public void off() {
-		tvState = "TV is off";
+		System.out.println("TV is off");
 	}
 
 	public void setInputChannel(int channel) {
 		this.channel = channel;
-		tvState = "Channel is set for " + channel;
-	}
+		System.out.println("TV change channel: " + channel);
 
-	public String getTVState() {
-		return tvState;
 	}
 
 	public int getChannel() {

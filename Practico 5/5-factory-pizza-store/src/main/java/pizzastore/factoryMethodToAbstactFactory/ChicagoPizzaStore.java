@@ -1,19 +1,17 @@
 package pizzastore.factoryMethodToAbstactFactory;
 
-public class ChicagoPizzaStore extends PizzaStoreFactory {
+public class ChicagoPizzaStore implements FactoryPizza {
 
 	@Override
-	public Pizza createPizzaCheese() {
-		return new ChicagoStyleCheesePizza();
-	}
-
-	@Override
-	public Pizza createPizzaClam() {
-		return new ChicagoStyleVeggiePizza();
-	}
-
-	@Override
-	public Pizza createPizzaVeggie() {
-		return new ChicagoStyleClamPizza();
+	public Pizza createTypePizza(String type) {
+		if(type.equals("cheese")) {
+			return new ChicagoStyleCheesePizza();
+		} else if (type.equals("clam")) {
+			return new ChicagoStyleClamPizza();
+		} else if (type.equals("veggie")) {
+			return new ChicagoStyleVeggiePizza();
+		} else {
+			throw new IllegalArgumentException("type pizza invalid");
+		}
 	}
 }
