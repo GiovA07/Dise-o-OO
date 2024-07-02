@@ -32,7 +32,7 @@ public class EratosthenesAlgorithm extends PrimeNumbersAlgorithm {
   @Override
   public void printOutput(List<Integer> numberPrimes) {
     try {
-        FileWriter fileWriter = new FileWriter("printEratos");
+        FileWriter fileWriter = new FileWriter("printEratos.txt");
         fileWriter.write("Prime Numbers: " + numberPrimes);
         fileWriter.close();
     } catch (IOException e) {

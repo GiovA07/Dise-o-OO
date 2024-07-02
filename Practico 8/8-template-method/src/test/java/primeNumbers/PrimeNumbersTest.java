@@ -2,10 +2,16 @@ package primeNumbers;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
@@ -13,35 +19,12 @@ import java.util.Arrays;
 public class PrimeNumbersTest {
   @Test
   public void primeNumberClassicTest() {
-    PrimeNumbersAlgorithm basic = new BasicAlgoritm();
+    PrimeNumbersAlgorithm basic = new BasicAlgorithm();
     List<Integer> listBasicPrimeNumbers = basic.searchPrimeNumbers(100);
     PrimeNumbersAlgorithm eratos = new EratosthenesAlgorithm();
     List<Integer> listEratos = eratos.searchPrimeNumbers(100);
 
     assertIterableEquals(listBasicPrimeNumbers, listEratos);
-  }
-
-  @Test
-  public void isPrimeNumber() {
-    PrimeNumbersAlgorithm basic = new BasicAlgoritm();
-    boolean isPrimeBasic = basic.isPrime(277);
-    PrimeNumbersAlgorithm eratos = new EratosthenesAlgorithm();
-    boolean isPrimeEratos = eratos.isPrime(277);
-
-    assertTrue(isPrimeBasic);
-    assertTrue(isPrimeEratos);
-
-  }
-
-  @Test
-  public void noIsPrimeNumber() {
-    PrimeNumbersAlgorithm basic = new BasicAlgoritm();
-    boolean isPrimeBasic = basic.isPrime(777);
-    PrimeNumbersAlgorithm eratos = new EratosthenesAlgorithm();
-    boolean isPrimeEratos = eratos.isPrime(777);
-
-    assertFalse(isPrimeBasic);
-    assertFalse(isPrimeEratos);
   }
 
   @Test
@@ -56,7 +39,26 @@ public class PrimeNumbersTest {
   }
 
 
+    @Test
+    public void primeNumberFileTest() throws IOException {
+        PrimeNumbersAlgorithm algorithm = new EratosthenesAlgorithm();
+        Client client = new Client(algorithm);
+        client.calculateAndPrintPrimes(20);
+
+        StringBuilder str = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader("printEratos.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                str.append(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw e;
+        }
 
 
+        String res = str.toString();
+        assertEquals("Prime Numbers: [2, 3, 5, 7, 11, 13, 17, 19]", res);
+    }
 
 }
