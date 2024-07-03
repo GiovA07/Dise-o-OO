@@ -21,7 +21,7 @@ public class CesarTest {
 		try {
 			in = new CesarCipherDecorator(
 					new BufferedInputStream(
-						new FileInputStream("test.txt")));
+						new FileInputStream("test.txt")), 3);
 
 			while((c = in.read()) >= 0) {
 				str.append((char)c);
@@ -47,7 +47,7 @@ public class CesarTest {
 		try {
 			in = new CesarDecryptDecorator(
 					new BufferedInputStream(
-						new FileInputStream("testEncrypt.txt")));
+						new FileInputStream("testEncrypt.txt")), 3);
 
 			while((c = in.read()) >= 0) {
 				str.append((char)c);

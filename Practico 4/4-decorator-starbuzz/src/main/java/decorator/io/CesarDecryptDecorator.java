@@ -6,8 +6,9 @@ import java.io.*;
 public class CesarDecryptDecorator extends FilterInputStream {
   int code = 3;
 
-  public CesarDecryptDecorator(InputStream in) {
+  public CesarDecryptDecorator(InputStream in, int n) {
     super(in);
+    this.code = 3;
   }
 
   @Override

@@ -4,15 +4,16 @@ import java.io.*;
 
 public class InputTest {
 		public static void main(String[] args) throws IOException {
+			int n = 3;
 			int c;
 			InputStream in = null;
 			OutputStream out = null;
 
 			try {
 				// Encriptar el archivo y guardarlo en encrypted.txt
-				in = new LineCont(new CesarCipherDecorator(
+				in =  new CesarCipherDecorator(
 						new BufferedInputStream(
-							new FileInputStream("test.txt"))));
+							new FileInputStream("test.txt")), n);
 
 				out = new BufferedOutputStream(new FileOutputStream("encrypted.txt"));
 
@@ -30,7 +31,7 @@ public class InputTest {
 				// Desencriptar el archivo encrypted.txt y mostrarlo en consola
 				in = new CesarDecryptDecorator(
 						new BufferedInputStream(
-							new FileInputStream("encrypted.txt")));
+							new FileInputStream("encrypted.txt")), n);
 
 				while((c = in.read()) >= 0) {
 					System.out.print((char)c);
