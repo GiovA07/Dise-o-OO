@@ -13,21 +13,21 @@ public class weaponTest {
   @Test
   public void swordTest() {
     Weapon sword = new Sword();
-    assertEquals(70, sword.get_damage());
+    assertEquals(15, sword.get_damage());
     assertEquals(FighterType.MELEE, sword.get_TypeWeapon());
   }
 
   @Test
   public void fireBallTest() {
     Weapon weapon = new FireBall();
-    assertEquals(50, weapon.get_damage());
+    assertEquals(10, weapon.get_damage());
     assertEquals(FighterType.MAGIC, weapon.get_TypeWeapon());
   }
 
   @Test
   public void archTest() {
     Weapon weapon = new Arch();
-    assertEquals(50, weapon.get_damage());
+    assertEquals(10, weapon.get_damage());
     assertEquals(FighterType.RANGED, weapon.get_TypeWeapon());
   }
 
@@ -38,7 +38,7 @@ public class weaponTest {
   public void rubyGemWeponTest() {
     Weapon weapon = new Sword();
     weapon = new RubyGem(weapon);
-    assertEquals(70+5, weapon.get_damage());
+    assertEquals(15+5, weapon.get_damage());
     assertEquals(4, weapon.get_maxGems());
     assertEquals(1, weapon.cantGems());
 
@@ -48,7 +48,7 @@ public class weaponTest {
   public void SaphireGemFirstBumpsTest() {
     Weapon weapon = new FistBumps();
     weapon = new SaphireGem(weapon);
-    assertEquals(15+7, weapon.get_damage());
+    assertEquals(10+7, weapon.get_damage());
     assertEquals(6, weapon.get_maxGems());
     assertEquals(1, weapon.cantGems());
   }
@@ -60,7 +60,7 @@ public class weaponTest {
     weapon = new RubyGem(weapon);
     weapon = new RubyGem(weapon);
     weapon = new RubyGem(weapon);
-    assertEquals(70+20, weapon.get_damage());
+    assertEquals(15+20, weapon.get_damage());
     assertEquals(4, weapon.get_maxGems());
     assertEquals(4, weapon.cantGems());
 
@@ -82,7 +82,7 @@ public class weaponTest {
     weapon = new SaphireGem(weapon);
     weapon = new SaphireGem(weapon);
 
-    assertEquals(15+15+7+7+7, weapon.get_damage());
+    assertEquals(10+15+7+7+7, weapon.get_damage());
     assertEquals(6, weapon.get_maxGems());
     assertEquals(6, weapon.cantGems());
 
@@ -100,7 +100,7 @@ public class weaponTest {
     weapon = new SaphireGem(weapon);
     weapon = new RubyGem(weapon);
     weapon = new SaphireGem(weapon);
-    assertEquals(50+7+5+7, weapon.get_damage());
+    assertEquals(10+7+5+7, weapon.get_damage());
     assertEquals(3, weapon.get_maxGems());
     assertEquals(3, weapon.cantGems());
 

@@ -1,19 +1,17 @@
 package facade.beverage;
- 
+
 public class Whip extends CondimentDecorator {
 	public Whip(Beverage beverage) {
 		this.beverage = beverage;
+		setSize(beverage.getSize());
+
 	}
- 
+
 	public String getDescription() {
 		return beverage.getDescription() + ", Whip";
 	}
- 
+
 	public double cost() {
-		if (beverage.getSize() == Size.SMALL)
-			return .10 + beverage.cost();
-		if (beverage.getSize() == Size.MEDIUM)
-			return .15 + beverage.cost();
-		return .20 + beverage.cost();
+		return .10 + beverage.cost();
 	}
 }

@@ -3,13 +3,14 @@ package remotecontrol.texteditnew;
 import java.util.Stack;
 
 public class AdminCommands {
-    private FactoryCommand factory = new FactoryCommand();
+    private FactoryCommand factory;
     private Stack<Command> undoStack;
     private Stack<Command> redoStack;
 
-    public AdminCommands() {
+    public AdminCommands(FactoryCommand factoryCommand) {
         undoStack = new Stack<>();
         redoStack = new Stack<>();
+        this.factory = factoryCommand;
     }
 
     public void executeCommand(int numCommand, Text buffer) {

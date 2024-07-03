@@ -35,14 +35,13 @@ public class ControlFacade {
     }
 
     public void setGameMode() {
-        control.onButtonWasPushed(0);
+        control.offButtonWasPushed(0);
         control.offButtonWasPushed(1);
         control.onButtonWasPushed(2);
         control.onButtonWasPushed(3);
     }
 
     public void offGameMode() {
-        control.offButtonWasPushed(1);
         control.offButtonWasPushed(2);
         control.offButtonWasPushed(3);
     }

@@ -12,7 +12,7 @@ public class DuckSimulator {
 
 		Duck model = new ModelDuck();
 		model.performFly();
-		model.setFlyBehavior(new FlyRocketPowered());
+		model.setFlyBehavior(new FlyRocket());
 		model.performFly();
 
 		//cambiando fly y quack
@@ -20,7 +20,7 @@ public class DuckSimulator {
 		Duck duckRubber = new ModelDuck();
 		duckRubber.performFly();
 		duckRubber.performQuack();
-		duckRubber.setFlyBehavior(new FlyRocketPowered());
+		duckRubber.setFlyBehavior(new FlyRocket());
 		duckRubber.setQuackBehavior(new NotQuack());
 		duckRubber.performFly();
 		duckRubber.performQuack();

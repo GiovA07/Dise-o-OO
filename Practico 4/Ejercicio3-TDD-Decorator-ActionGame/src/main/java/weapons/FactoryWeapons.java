@@ -16,7 +16,7 @@ public class FactoryWeapons {
         } else if (type.equals("cannonBomb")) {
             return new CannonBomb();
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("name weapon invalid");
         }
     }
 
@@ -26,7 +26,7 @@ public class FactoryWeapons {
         } else if (type.equals("saphire")) {
             return new SaphireGem(weapon);
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("name gem invalid");
         }
     }
 }

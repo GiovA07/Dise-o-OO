@@ -13,7 +13,7 @@ public class FactoryCharacters {
         } else if (type.equals("wizard")) {
             return new Wizard();
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("name character invalid");
         }
     }
 }

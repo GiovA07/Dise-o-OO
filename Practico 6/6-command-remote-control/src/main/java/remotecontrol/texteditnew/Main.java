@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        AdminCommands admin = new AdminCommands();
+        FactoryCommand factory = new FactoryTextCommand();
+        AdminCommands admin = new AdminCommands(factory);
         Text buffer = new Text();
 
         boolean bool = true;

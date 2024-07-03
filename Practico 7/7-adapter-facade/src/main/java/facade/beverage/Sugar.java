@@ -10,10 +10,6 @@ public class Sugar extends CondimentDecorator {
 	}
 
 	public double cost() {
-		if (beverage.getSize() == Size.SMALL)
-			return .15 + beverage.cost();
-		if (beverage.getSize() == Size.MEDIUM)
-			return .20 + beverage.cost();
 		return .25 + beverage.cost();
 	}
 }

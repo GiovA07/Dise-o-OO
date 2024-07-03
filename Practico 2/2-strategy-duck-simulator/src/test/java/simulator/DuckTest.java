@@ -34,7 +34,7 @@ public class DuckTest {
         Duck rubberDuck = new RubberDuck();
 
         QuackBehavior newQuack = mock(NotQuack.class);
-        FlyBehavior newFly = mock(FlyRocketPowered.class);
+        FlyBehavior newFly = mock(FlyRocket.class);
 
         rubberDuck.setQuackBehavior(newQuack);
         rubberDuck.setFlyBehavior(newFly);

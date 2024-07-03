@@ -1,5 +1,7 @@
 package facade.beverage;
 
+import facade.beverage.size.*;
+
 public class BeverageFactory {
 
     public Beverage createBeverage(String type, Size size, String ingredients) {
@@ -14,14 +16,16 @@ public class BeverageFactory {
             bebida = new Decaf(size);
         } else if (type.equals("House Blend")) {
             bebida = new HouseBlend(size);
-        } else 
+        } else if (type.equals("Cappuccino")) {
+            bebida = new Cappuccino(size);
+        } else
             throw new IllegalArgumentException("Tipo de bebida incexistente");
-        
+
         return addIngredients(ingredients, bebida);
     }
 
     private Beverage addIngredients(String ingredients, Beverage bebida) {
-        
+
         String[] listOfIngredients = ingredients.split(",");
 
         for (String string : listOfIngredients) {
@@ -35,7 +39,9 @@ public class BeverageFactory {
                 bebida = new Sugar(bebida);
             else if (string.equals("Whip"))
                 bebida = new Whip(bebida);
-            else 
+                else if (string.equals("Caramel"))
+                bebida = new Caramel(bebida);
+            else
                 throw new IllegalArgumentException("Condimento ingresado invalido");
         }
 
